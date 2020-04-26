@@ -249,11 +249,10 @@ bool GlueCompiler::loadEvtFile(std::filesystem::path& path) {
     std::vector<glue::Event> new_events;
 
     try {
-        int lineno = 0;
         std::string chunk;
 
         while ( ! in.eof() ) {
-            _locations.emplace_back(path, ++lineno);
+            _locations.emplace_back(path);
 
             std::string line;
             std::getline(in, line);
